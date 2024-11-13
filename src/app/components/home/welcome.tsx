@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Welcome() {
   return (
     <section className="py-6 h-screen">
-      <p className="font-normal text-xs text-center mb-4">Bienvenido a</p>
+      <p className="font-normal text-xs text-center mb-4">BIENVENIDO A</p>
       <h1 className="font-bold text-5xl text-center mb-4">FANTASTIC STORE</h1>
       <div className="h-3/4 flex justify-center gap-4 overflow-hidden">
         <CardImage src="/images/welcome1.jpg" />
