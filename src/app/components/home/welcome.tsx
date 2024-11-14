@@ -16,15 +16,24 @@ export default function Welcome() {
   });
 
   const posX = useTransform(springX, [0, 0.5, 1], [-100, 0, 100]);
+  const invertedPosX = useTransform(springX, [0, 0.5, 1], [50, 0, -50]);
 
   return (
     <section className="py-6 h-screen">
-      <p className="font-normal text-xs text-center mb-4">BIENVENIDO A</p>
-      <h1 className="font-bold text-5xl text-center mb-4">FANTASTIC STORE</h1>
+      <motion.div
+        style={{ x: invertedPosX }}
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+      >
+        <p className="font-normal text-xs text-center mb-4">BIENVENIDO A</p>
+        <h1 className="font-bold text-5xl text-center mb-4">FANTASTIC STORE</h1>
+      </motion.div>
       <motion.div
         style={{ x: posX }}
         className="h-3/4 flex justify-center gap-4 overflow-visible"
         ref={containerRef}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
       >
         <CardImage src="/images/welcome1.jpg" />
         <CardImage src="/images/welcome2.jpg" />
