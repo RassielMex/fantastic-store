@@ -11,34 +11,38 @@ export default function Categories() {
         DESCUBRE LA COMBINACION ENTRE COMODIDAD Y ESTILO, EXPLORA ENTRE TODAS
         LAS CATEGORIAS Y MÁS.
       </p>
-      <div className="grid gap-x-4 gap-y-6 grid-rows-3 grid-cols-3 h-3/4">
+
+      <div className="grid gap-x-4 gap-y-6 grid-rows-3 grid-cols-3 h-3/4 max-h-[800]">
         <CategoryCard
-          category="JEANS_1"
+          category="JEANS"
           bottomyImg="/images/jeans.png"
-          description="El mejor estilo para tus jeans"
+          description="El mejor estilo para tus jeans. Descubre las tendencias y marca la nueva era."
           span={2}
+          paddingTop
         />
         <CategoryCard
-          category="JEANS_2"
-          bottomyImg="/images/jeans.png"
+          category="PROMOTIONS"
+          topImg="/images/promotions1.png"
+          bottomyImg="/images/promotions2.png"
           description="El mejor estilo para tus jeans"
           span={3}
         />
         <CategoryCard
-          category="JEANS_3"
-          bottomyImg="/images/jeans.png"
-          description="El mejor estilo para tus jeans"
+          category="T-SHIRTS"
+          bottomyImg="/images/t-shirts.png"
+          paddingTop
         />
         <CategoryCard
-          category="JEANS_4"
-          bottomyImg="/images/jeans.png"
-          description="El mejor estilo para tus jeans"
+          category="SNEAKERS"
+          bottomyImg="/images/sneakers.png"
+          description="Pasion por lo fashion y la comodidad que se reflejan en cada par de zapatos. Experiencia en estilo y funcionalidad"
           span={2}
+          paddingTop
         />
         <CategoryCard
-          category="JEANS_5"
-          bottomyImg="/images/jeans.png"
-          description="El mejor estilo para tus jeans"
+          category="SHIRTS"
+          bottomyImg="/images/shirts.png"
+          paddingTop
         />
       </div>
     </section>
@@ -51,27 +55,36 @@ type CategoryType = {
   topImg?: string;
   description?: string;
   span?: number;
+  paddingTop?: boolean;
 };
 const CategoryCard = ({
   bottomyImg,
   category,
   topImg,
   description,
+  paddingTop = false,
   span = 1,
 }: CategoryType) => {
   return (
     <div
       className={clsx(
-        "p-10 bg-gradient-to-b from-card_background rounded-md",
+        "flex flex-col justify-between px-10 bg-gradient-to-tr from-card_background rounded-md",
         span === 1 && "row-span-1",
         span === 2 && "row-span-2",
-        span === 3 && "row-span-3"
+        span === 3 && "row-span-3",
+        paddingTop && "pt-10"
       )}
     >
-      {topImg && <Image src={topImg} alt="top image" />}
-      <h3>{category}</h3>
-      {description && <p>{description}</p>}
-      <div className="relative w-[150px] h-[150px]">
+      {topImg && (
+        <div className="relative h-1/2">
+          <Image src={topImg} alt="bottom image" fill />
+        </div>
+      )}
+      <h3 className="text-center text-xl font-bold mb-4">{category}</h3>
+      {description && (
+        <p className="font-normal text-xs text-center">{description}</p>
+      )}
+      <div className="relative h-1/2">
         <Image src={bottomyImg} alt="bottom image" fill />
       </div>
     </div>
