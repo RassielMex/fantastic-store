@@ -2,8 +2,10 @@
 import Image from "next/image";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { useTheme } from "next-themes";
 
 export default function Welcome() {
+  const { theme } = useTheme();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -20,7 +22,9 @@ export default function Welcome() {
 
   return (
     <section className="relative py-6 h-screen bg-background">
-      <div className="absolute blur bg-background -top-2 h-6 w-full z-10"></div>
+      {theme === "dark" && (
+        <div className="absolute blur bg-background -top-2 h-6 w-full z-10" />
+      )}
       <motion.div
         style={{ x: invertedPosX }}
         initial={{ opacity: 0, y: 10 }}

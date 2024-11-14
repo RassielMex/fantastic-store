@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Sora } from "next/font/google";
 import Navbar from "./components/shared/navbar";
+import { ThemeProvider } from "./components/providers/theme-provider";
+import { Sora } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Fantastic Store",
@@ -20,9 +21,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sora.className}  antialiased bg-background`}>
-        <Navbar />
-        {children}
+      <body className={`${sora.className} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
