@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "./components/shared/navbar";
-import { ThemeProvider } from "./components/providers/theme-provider";
+import Navbar from "./ui/shared/navbar";
+import { ThemeProvider } from "./ui/providers/theme-provider";
 import { Sora } from "next/font/google";
 
 export const metadata: Metadata = {

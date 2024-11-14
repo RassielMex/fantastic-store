@@ -1,6 +1,6 @@
-import Categories from "./components/home/categories";
-import VideoHero from "./components/home/video-hero";
-import Welcome from "./components/home/welcome";
+import Categories from "./ui/home/categories";
+import VideoHero from "./ui/home/video-hero";
+import Welcome from "./ui/home/welcome";
 
 export default function Home() {
   return (
