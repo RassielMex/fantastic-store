@@ -7,9 +7,7 @@ export default function Home() {
     <div>
       <VideoHero />
       <Welcome />
-      <div className="container mx-auto">
-        <Categories />
-      </div>
+      <Categories />
     </div>
   );
 }

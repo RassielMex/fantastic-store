@@ -19,13 +19,16 @@ export default function Welcome() {
   const invertedPosX = useTransform(springX, [0, 0.5, 1], [50, 0, -50]);
 
   return (
-    <section className="py-6 h-screen">
+    <section className="relative py-6 h-screen bg-background">
+      <div className="absolute blur bg-background -top-2 h-6 w-full z-10"></div>
       <motion.div
         style={{ x: invertedPosX }}
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
       >
-        <p className="font-normal text-xs text-center mb-4">BIENVENIDO A</p>
+        <p className="font-normal text-xs text-center mt-10 mb-4">
+          BIENVENIDO A
+        </p>
         <h1 className="font-bold text-5xl text-center mb-4">FANTASTIC STORE</h1>
       </motion.div>
       <motion.div

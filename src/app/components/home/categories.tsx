@@ -1,50 +1,58 @@
 import clsx from "clsx";
 import Image from "next/image";
+import * as motion from "framer-motion/client";
 
 export default function Categories() {
   return (
-    <section className="h-lvh mb-16">
-      <h1 className="font-bold text-5xl text-center mb-4">
-        ELEVANDO TU FORMA DE JUGAR A LA MODA
-      </h1>
-      <p className="font-normal text-xs text-center mb-8">
-        DESCUBRE LA COMBINACION ENTRE COMODIDAD Y ESTILO, EXPLORA ENTRE TODAS
-        LAS CATEGORIAS Y MÁS.
-      </p>
+    <section className="bg-background">
+      <motion.div
+        className="container mx-auto h-screen "
+        initial={{ opacity: 0.8, y: 20, x: -5 }}
+        whileInView={{ opacity: 1, y: 0, x: 5 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h1 className="font-bold text-5xl text-center mb-4">
+          ELEVANDO TU FORMA DE JUGAR A LA MODA
+        </h1>
+        <p className="font-normal text-xs text-center mb-8">
+          DESCUBRE LA COMBINACION ENTRE COMODIDAD Y ESTILO, EXPLORA ENTRE TODAS
+          LAS CATEGORIAS Y MÁS.
+        </p>
 
-      <div className="grid gap-x-4 gap-y-6 grid-rows-3 grid-cols-3 h-3/4 max-h-[800]">
-        <CategoryCard
-          category="JEANS"
-          bottomyImg="/images/jeans.png"
-          description="El mejor estilo para tus jeans. Descubre las tendencias y marca la nueva era."
-          span={2}
-          paddingTop
-        />
-        <CategoryCard
-          category="PROMOTIONS"
-          topImg="/images/promotions1.png"
-          bottomyImg="/images/promotions2.png"
-          description="El mejor estilo para tus jeans"
-          span={3}
-        />
-        <CategoryCard
-          category="T-SHIRTS"
-          bottomyImg="/images/t-shirts.png"
-          paddingTop
-        />
-        <CategoryCard
-          category="SNEAKERS"
-          bottomyImg="/images/sneakers.png"
-          description="Pasion por lo fashion y la comodidad que se reflejan en cada par de zapatos. Experiencia en estilo y funcionalidad"
-          span={2}
-          paddingTop
-        />
-        <CategoryCard
-          category="SHIRTS"
-          bottomyImg="/images/shirts.png"
-          paddingTop
-        />
-      </div>
+        <div className="grid gap-x-4 gap-y-6 grid-rows-3 grid-cols-3 h-3/4 max-h-[800]">
+          <CategoryCard
+            category="JEANS"
+            bottomyImg="/images/jeans.png"
+            description="El mejor estilo para tus jeans. Descubre las tendencias y marca la nueva era."
+            span={2}
+            paddingTop
+          />
+          <CategoryCard
+            category="PROMOTIONS"
+            topImg="/images/promotions1.png"
+            bottomyImg="/images/promotions2.png"
+            description="El mejor estilo para tus jeans"
+            span={3}
+          />
+          <CategoryCard
+            category="T-SHIRTS"
+            bottomyImg="/images/t-shirts.png"
+            paddingTop
+          />
+          <CategoryCard
+            category="SNEAKERS"
+            bottomyImg="/images/sneakers.png"
+            description="Pasion por lo fashion y la comodidad que se reflejan en cada par de zapatos. Experiencia en estilo y funcionalidad"
+            span={2}
+            paddingTop
+          />
+          <CategoryCard
+            category="SHIRTS"
+            bottomyImg="/images/shirts.png"
+            paddingTop
+          />
+        </div>
+      </motion.div>
     </section>
   );
 }
