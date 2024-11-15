@@ -9,11 +9,11 @@ import CardProduct from "../shared/CardProduct";
 
 export default function Trending() {
   return (
-    <section className="bg-background">
+    <section className="bg-background py-8">
       <div className="container mx-auto">
-        <h1 className="font-bold text-5xl text-center mb-4">TENDENDCIA</h1>
-        <div className="grid gap-y-8 grid-rows-2">
-          <Carousel>
+        <h1 className="font-bold text-5xl text-center mb-6">TENDENDCIA</h1>
+        <div className="px-20 min-w-96">
+          <Carousel className="mb-10">
             <CarouselContent>
               <CarouselItem className="lg:basis-1/3">
                 <CardProduct />
@@ -34,7 +34,7 @@ export default function Trending() {
             <CarouselPrevious />
             <CarouselNext />
           </Carousel>
-          <Carousel>
+          <Carousel className="">
             <CarouselContent>
               <CarouselItem className="lg:basis-1/3">
                 <CardProduct />

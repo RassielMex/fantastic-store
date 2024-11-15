@@ -21,7 +21,7 @@ export default function Welcome() {
   const invertedPosX = useTransform(springX, [0, 0.5, 1], [50, 0, -50]);
 
   return (
-    <section className="relative py-6 h-screen bg-background">
+    <section className="py-6 h-screen bg-background">
       {theme === "dark" && (
         <div className="absolute blur bg-background -top-2 h-6 w-full z-10" />
       )}

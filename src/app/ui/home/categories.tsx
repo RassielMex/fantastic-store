@@ -4,12 +4,16 @@ import * as motion from "framer-motion/client";
 
 export default function Categories() {
   return (
-    <section className="bg-background">
+    <section className="bg-background py-20">
       <motion.div
-        className="container mx-auto h-screen "
+        className="container mx-auto "
         initial={{ opacity: 0.8, y: 20, x: -5 }}
-        whileInView={{ opacity: 1, y: 0, x: 5 }}
-        transition={{ duration: 0.5 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          x: 5,
+          transition: { ease: "easeIn", type: "spring" },
+        }}
       >
         <h1 className="font-bold text-5xl text-center mb-4">
           ELEVANDO TU FORMA DE JUGAR A LA MODA
@@ -19,7 +23,7 @@ export default function Categories() {
           LAS CATEGORIAS Y MÁS.
         </p>
 
-        <div className="grid gap-x-4 gap-y-6 grid-rows-3 grid-cols-3 h-3/4 max-h-[800]">
+        <div className="grid gap-x-4 gap-y-6 md:grid-rows-3 md:grid-cols-3 md:h-3/4 md:max-h-[800]">
           <CategoryCard
             category="JEANS"
             bottomyImg="/images/jeans.png"
@@ -84,7 +88,7 @@ const CategoryCard = ({
       )}
     >
       {topImg && (
-        <div className="relative h-1/2">
+        <div className="relative h-60">
           <Image src={topImg} alt="bottom image" fill />
         </div>
       )}
@@ -92,7 +96,7 @@ const CategoryCard = ({
       {description && (
         <p className="font-normal text-xs text-center">{description}</p>
       )}
-      <div className="relative h-1/2">
+      <div className="relative h-60">
         <Image src={bottomyImg} alt="bottom image" fill />
       </div>
     </div>
