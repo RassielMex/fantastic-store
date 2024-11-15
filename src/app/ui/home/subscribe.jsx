@@ -30,11 +30,8 @@ export default function Subscribe() {
             },
           }}
         />
-        <h1 className="z-10 font-bold text-5xl text-center mb-8">
-          DESCRUBRE TU ESTILO
-        </h1>
-        <h1 className="z-10 font-bold text-5xl text-center mb-8">
-          A UN BOTÓN DE DISTANCIA
+        <h1 className="z-10 font-bold text-5xl text-center max-w-[600px] mb-10">
+          DESCRUBRE TU ESTILO A UN BOTÓN DE DISTANCIA
         </h1>
         <form className="z-10 flex flex-col gap-2 w-full max-w-lg">
           <input
