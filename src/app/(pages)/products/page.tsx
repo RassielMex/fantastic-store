@@ -1,4 +1,4 @@
-import CardProduct from "@/app/ui/shared/CardProduct";
+import CardProduct from "@/app/ui/shared/card-product";
 import { Storefront } from "@phosphor-icons/react/dist/ssr";
 
 export default function ProductsPage() {
@@ -32,21 +32,21 @@ export default function ProductsPage() {
         </video>
       </section>
       <section className="p-8 grid gap-4 grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
+        <CardProduct product={{}} />
+        <CardProduct product={{}} />
+        <CardProduct product={{}} />
+        <CardProduct product={{}} />
+        <CardProduct product={{}} />
+        <CardProduct product={{}} />
+        <CardProduct product={{}} />
+        <CardProduct product={{}} />
+        <CardProduct product={{}} />
+        <CardProduct product={{}} />
+        <CardProduct product={{}} />
+        <CardProduct product={{}} />
+        <CardProduct product={{}} />
+        <CardProduct product={{}} />
+        <CardProduct product={{}} />
       </section>
     </div>
   );

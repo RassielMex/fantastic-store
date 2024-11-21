@@ -94,7 +94,7 @@ const CategoryCard = ({
       )}
       <h3 className="text-center text-xl font-bold mb-4">{category}</h3>
       {description && (
-        <p className="font-normal text-xs text-center">{description}</p>
+        <p className="font-normal text-sm text-center">{description}</p>
       )}
       <div className="relative h-60">
         <Image src={bottomyImg} alt="bottom image" fill />
