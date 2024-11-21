@@ -8,3 +8,11 @@ export interface Clothing {
   imgUrl?: string;
   price?: number;
 }
+
+export enum ClothingCategory {
+  JEANS = "jeans",
+  CASUAL = "casual",
+  DEPORTIVO = "deportivo",
+  FORMAL = "formal",
+  ACCESORIOS = "accesorios",
+}

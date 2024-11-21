@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import Image from "next/image";
 import * as motion from "framer-motion/client";
+import Link from "next/link";
+import { ClothingCategory } from "@/app/models/models";
 
 export default function Categories() {
   return (
@@ -25,35 +27,40 @@ export default function Categories() {
 
         <div className="grid gap-x-4 gap-y-6 md:grid-rows-3 md:grid-cols-3 md:h-3/4 md:max-h-[800]">
           <CategoryCard
-            category="JEANS"
+            category={ClothingCategory.JEANS.toUpperCase()}
             bottomyImg="/images/jeans.png"
             description="El mejor estilo para tus jeans. Descubre las tendencias y marca la nueva era."
             span={2}
             paddingTop
+            href={`/products/?category=${ClothingCategory.JEANS}`}
           />
           <CategoryCard
-            category="PROMOTIONS"
+            category={ClothingCategory.ACCESORIOS.toUpperCase()}
             topImg="/images/promotions1.png"
             bottomyImg="/images/promotions2.png"
             description="El mejor estilo para tus jeans"
             span={3}
+            href={`/products/?category=${ClothingCategory.ACCESORIOS}`}
           />
           <CategoryCard
-            category="T-SHIRTS"
+            category={ClothingCategory.CASUAL.toUpperCase()}
             bottomyImg="/images/t-shirts.png"
             paddingTop
+            href={`/products/?category=${ClothingCategory.CASUAL}`}
           />
           <CategoryCard
-            category="SNEAKERS"
+            category={ClothingCategory.DEPORTIVO.toUpperCase()}
             bottomyImg="/images/sneakers.png"
             description="Pasion por lo fashion y la comodidad que se reflejan en cada par de zapatos. Experiencia en estilo y funcionalidad"
             span={2}
             paddingTop
+            href={`/products/?category=${ClothingCategory.DEPORTIVO}`}
           />
           <CategoryCard
-            category="SHIRTS"
+            category={ClothingCategory.FORMAL.toUpperCase()}
             bottomyImg="/images/shirts.png"
             paddingTop
+            href={`/products/?category=${ClothingCategory.FORMAL}`}
           />
         </div>
       </motion.div>
@@ -68,6 +75,7 @@ type CategoryType = {
   description?: string;
   span?: number;
   paddingTop?: boolean;
+  href: string;
 };
 const CategoryCard = ({
   bottomyImg,
@@ -76,9 +84,11 @@ const CategoryCard = ({
   description,
   paddingTop = false,
   span = 1,
+  href,
 }: CategoryType) => {
   return (
-    <div
+    <Link
+      href={href}
       className={clsx(
         "flex flex-col justify-between px-10 bg-gradient-to-tr from-card_background rounded-md",
         span === 1 && "row-span-1",
@@ -99,6 +109,6 @@ const CategoryCard = ({
       <div className="relative h-60">
         <Image src={bottomyImg} alt="bottom image" fill />
       </div>
-    </div>
+    </Link>
   );
 };
