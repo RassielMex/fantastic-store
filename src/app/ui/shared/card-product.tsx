@@ -1,4 +1,4 @@
-import { Clothing } from "@/app/models/clothing";
+import { Clothing } from "@/app/models/models";
 import Image from "next/image";
 import * as motion from "framer-motion/client";
 
@@ -6,10 +6,9 @@ export default function CardProduct({ product }: { product: Clothing }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: [0.4, 0.8, 1] }}
-      transition={{
-        ease: "circIn",
-        duration: 3,
+      whileInView={{
+        opacity: 1,
+        transition: { ease: "circIn", duration: 2 },
       }}
     >
       <div className="relative h-[378px]">
