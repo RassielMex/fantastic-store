@@ -1,4 +1,4 @@
-import { Clothing } from "@/app/models/clothing";
+import { Clothing } from "@/app/models/models";
 
 export async function getClothing(trending: boolean) {
   try {
