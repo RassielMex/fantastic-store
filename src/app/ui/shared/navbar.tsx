@@ -7,7 +7,7 @@ export default function Navbar() {
   const isDarkTheme = theme.theme;
 
   return (
-    <div className="w-full fixed top-0 left-0 z-10 hover:bg-background">
+    <div className="w-screen fixed top-0 left-0 z-10 hover:bg-background">
       <div className="container mx-auto p-6 flex justify-between">
         <List size={24} />
         <h1 className="font-semibold text-lg">FANTASTIC STORE</h1>

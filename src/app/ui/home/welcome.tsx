@@ -21,7 +21,7 @@ export default function Welcome() {
   const invertedPosX = useTransform(springX, [0, 0.5, 1], [50, 0, -50]);
 
   return (
-    <section className="relative py-6 h-screen bg-background">
+    <section className="relative py-6 h-screen bg-background overflow-x-hidden">
       {theme === "dark" && (
         <div className="absolute blur bg-background -top-2 h-6 w-full z-10" />
       )}
@@ -37,7 +37,7 @@ export default function Welcome() {
       </motion.div>
       <motion.div
         style={{ x: posX }}
-        className="h-3/4 flex justify-center gap-4 overflow-visible"
+        className="h-3/4 flex justify-center gap-4 "
         ref={containerRef}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -53,7 +53,7 @@ export default function Welcome() {
 
 const CardImage = ({ src }: { src: string }) => {
   return (
-    <div className="relative h-full min-w-[426px]">
+    <div className="relative h-full min-w-[300px] md:min-w-[426px]">
       <Image src={src} alt="Card image" fill className="rounded-md" />
     </div>
   );

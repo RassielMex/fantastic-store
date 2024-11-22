@@ -4,7 +4,7 @@ import * as motion from "framer-motion/client";
 //
 export default function Subscribe() {
   return (
-    <section className="py-28 bg-background">
+    <section className="py-28 bg-background overflow-x-hidden">
       <div className="relative px-10 h-[720px] flex flex-col justify-center items-center">
         <motion.div
           className="absolute w-full h-full blur-sm opacity-30 grayscale bg-cover  bg-[url('/images/clothes.png')]"
